@@ -8,12 +8,9 @@ class PemerintahanSection extends StatelessWidget {
     return Container(
       width: double.infinity,
       color: Colors.white,
-      padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 60),
+      padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 50),
       child: Column(
         children: [
-          // ==========================================
-          // JUDUL
-          // ==========================================
           const Text(
             "Pemerintahan Nagari",
             style: TextStyle(
@@ -23,7 +20,7 @@ class PemerintahanSection extends StatelessWidget {
             ),
           ),
 
-          const SizedBox(height: 12),
+          const SizedBox(height: 10),
 
           const Text(
             "Struktur Organisasi Pemerintahan "
@@ -34,298 +31,284 @@ class PemerintahanSection extends StatelessWidget {
 
           const SizedBox(height: 45),
 
-          // ==========================================
-          // PJ. WALI NAGARI
-          // ==========================================
-          _JabatanCard(
-            icon: Icons.account_balance,
-            jabatan: "PJ. WALI NAGARI",
-            nama: "SAHRIMAR, S.E, M.H",
-            utama: true,
-          ),
-
-          _GarisVertikal(),
-
-          // ==========================================
-          // SEKRETARIS NAGARI
-          // ==========================================
-          _JabatanCard(
-            icon: Icons.person,
-            jabatan: "SEKRETARIS NAGARI",
-            nama: "ADLIS, SE",
-            utama: true,
-          ),
-
-          const SizedBox(height: 35),
-
-          // ==========================================
-          // PERANGKAT NAGARI
-          // ==========================================
           LayoutBuilder(
             builder: (context, constraints) {
-              // ========================================
-              // TAMPILAN LAPTOP / DESKTOP
-              // ========================================
-
-              if (constraints.maxWidth > 800) {
-                return Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    // ----------------------------------
-                    // KIRI
-                    // ----------------------------------
-                    Expanded(
-                      child: Column(
-                        children: [
-                          _JabatanCard(
-                            icon: Icons.account_balance,
-                            jabatan: "KASI PEMERINTAHAN",
-                            nama: "ERIK COPRIMA, S.Kom",
-                          ),
-
-                          _GarisVertikal(),
-
-                          _JabatanCard(
-                            icon: Icons.computer,
-                            jabatan: "STAF IT",
-                            nama: "LIDRA",
-                          ),
-                        ],
-                      ),
-                    ),
-
-                    const SizedBox(width: 20),
-
-                    // ----------------------------------
-                    // TENGAH
-                    // ----------------------------------
-                    Expanded(
-                      child: Column(
-                        children: [
-                          _JabatanCard(
-                            icon: Icons.people,
-                            jabatan: "KASI KESRA & PELAYANAN",
-                            nama: "VIVI INDRIANI, SM",
-                          ),
-
-                          _GarisVertikal(),
-
-                          _JabatanCard(
-                            icon: Icons.person,
-                            jabatan: "STAF KESRA & PELAYANAN",
-                            nama: "AFNITIA FARISKI, SH",
-                          ),
-                        ],
-                      ),
-                    ),
-
-                    const SizedBox(width: 20),
-
-                    // ----------------------------------
-                    // KANAN
-                    // ----------------------------------
-                    Expanded(
-                      child: Column(
-                        children: [
-                          _JabatanCard(
-                            icon: Icons.assignment,
-                            jabatan: "KAUR UMUM & PERENCANAAN",
-                            nama: "SULASTRI, S.Pd",
-                          ),
-
-                          _GarisVertikal(),
-
-                          _JabatanCard(
-                            icon: Icons.computer,
-                            jabatan: "OPERATOR SIPADES",
-                            nama: "WAHYU SAPUTERA, S.Sos.I",
-                          ),
-
-                          const SizedBox(height: 25),
-
-                          _JabatanCard(
-                            icon: Icons.account_balance_wallet,
-                            jabatan: "KAUR KEUANGAN",
-                            nama: "MARLINDA, S.Pd",
-                          ),
-
-                          _GarisVertikal(),
-
-                          _JabatanCard(
-                            icon: Icons.computer,
-                            jabatan: "OPERATOR SIKUEDES",
-                            nama: "NINA SAFITRI, S.Sos",
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                );
+              if (constraints.maxWidth >= 1100) {
+                return const _DesktopStructure();
               }
 
-              // ========================================
-              // TAMPILAN HP / LAYAR KECIL
-              // ========================================
-
-              return Column(
-                children: [
-                  _JabatanCard(
-                    icon: Icons.account_balance,
-                    jabatan: "KASI PEMERINTAHAN",
-                    nama: "ERIK COPRIMA, S.Kom",
-                  ),
-
-                  _GarisVertikal(),
-
-                  _JabatanCard(
-                    icon: Icons.computer,
-                    jabatan: "STAF IT",
-                    nama: "LIDRA",
-                  ),
-
-                  const SizedBox(height: 25),
-
-                  _JabatanCard(
-                    icon: Icons.people,
-                    jabatan: "KASI KESRA & PELAYANAN",
-                    nama: "VIVI INDRIANI, SM",
-                  ),
-
-                  _GarisVertikal(),
-
-                  _JabatanCard(
-                    icon: Icons.person,
-                    jabatan: "STAF KESRA & PELAYANAN",
-                    nama: "AFNITIA FARISKI, SH",
-                  ),
-
-                  const SizedBox(height: 25),
-
-                  _JabatanCard(
-                    icon: Icons.assignment,
-                    jabatan: "KAUR UMUM & PERENCANAAN",
-                    nama: "SULASTRI, S.Pd",
-                  ),
-
-                  _GarisVertikal(),
-
-                  _JabatanCard(
-                    icon: Icons.computer,
-                    jabatan: "OPERATOR SIPADES",
-                    nama: "WAHYU SAPUTERA, S.Sos.I",
-                  ),
-
-                  const SizedBox(height: 25),
-
-                  _JabatanCard(
-                    icon: Icons.account_balance_wallet,
-                    jabatan: "KAUR KEUANGAN",
-                    nama: "MARLINDA, S.Pd",
-                  ),
-
-                  _GarisVertikal(),
-
-                  _JabatanCard(
-                    icon: Icons.computer,
-                    jabatan: "OPERATOR SIKUEDES",
-                    nama: "NINA SAFITRI, S.Sos",
-                  ),
-                ],
-              );
+              return const _MobileStructure();
             },
           ),
-
-          const SizedBox(height: 50),
-
-          // ==========================================
-          // KEPALA JORONG
-          // ==========================================
-          const Text(
-            "Kepala Jorong",
-            style: TextStyle(
-              fontSize: 25,
-              fontWeight: FontWeight.bold,
-              color: Colors.green,
-            ),
-          ),
-
-          const SizedBox(height: 25),
-
-          LayoutBuilder(
-            builder: (context, constraints) {
-              // ========================================
-              // DESKTOP
-              // ========================================
-
-              if (constraints.maxWidth > 700) {
-                return Row(
-                  children: [
-                    Expanded(
-                      child: _JabatanCard(
-                        icon: Icons.location_city,
-                        jabatan: "KEPALA JORONG AIR HAJI",
-                        nama: "SADRIMAN",
-                      ),
-                    ),
-
-                    const SizedBox(width: 25),
-
-                    Expanded(
-                      child: _JabatanCard(
-                        icon: Icons.location_city,
-                        jabatan: "KEPALA JORONG AIR HAJI SELATAN",
-                        nama: "ASRIL JONI",
-                      ),
-                    ),
-                  ],
-                );
-              }
-
-              // ========================================
-              // HP
-              // ========================================
-
-              return Column(
-                children: [
-                  _JabatanCard(
-                    icon: Icons.location_city,
-                    jabatan: "KEPALA JORONG AIR HAJI",
-                    nama: "SADRIMAN",
-                  ),
-
-                  const SizedBox(height: 20),
-
-                  _JabatanCard(
-                    icon: Icons.location_city,
-                    jabatan: "KEPALA JORONG AIR HAJI SELATAN",
-                    nama: "PLT. KASI PEMERINTAHAN",
-                  ),
-                ],
-              );
-            },
-          ),
-
-          const SizedBox(height: 40),
         ],
       ),
     );
   }
 }
 
-// ==================================================
-// CARD JABATAN
-// ==================================================
+// ============================================================
+// DESKTOP
+// ============================================================
 
-class _JabatanCard extends StatelessWidget {
-  final IconData icon;
+class _DesktopStructure extends StatelessWidget {
+  const _DesktopStructure();
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        // ====================================================
+        // PJ WALI NAGARI
+        // ====================================================
+        const SizedBox(
+          width: 380,
+          child: _PersonCard(
+            jabatan: "PJ. WALI NAGARI",
+            nama: ["SAHRIMAR, S.E, M.H"],
+            icon: Icons.account_balance,
+            utama: true,
+          ),
+        ),
+
+        // GARIS PJ -> CABANG
+        const _VerticalLine(height: 45),
+
+        // ====================================================
+        // CABANG UTAMA
+        // ====================================================
+        _MainBranch(),
+
+        const SizedBox(height: 70),
+
+        // ====================================================
+        // KEPALA JORONG
+        // ====================================================
+        const Text(
+          "Kepala Jorong",
+          style: TextStyle(
+            fontSize: 26,
+            fontWeight: FontWeight.bold,
+            color: Colors.green,
+          ),
+        ),
+
+        const SizedBox(height: 25),
+
+        const Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Expanded(
+              child: _PersonCard(
+                jabatan: "KEPALA JORONG AIR HAJI",
+                nama: ["SADRIMAN"],
+                icon: Icons.location_city,
+              ),
+            ),
+
+            SizedBox(width: 30),
+
+            Expanded(
+              child: _PersonCard(
+                jabatan: "KEPALA JORONG AIR HAJI SELATAN",
+                nama: ["ASRIL JONI"],
+                icon: Icons.location_city,
+              ),
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+}
+
+// ============================================================
+// CABANG UTAMA
+// ============================================================
+
+class _MainBranch extends StatelessWidget {
+  const _MainBranch();
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        // ====================================================
+        // SEKRETARIS
+        // ====================================================
+        const SizedBox(
+          width: 380,
+          child: _PersonCard(
+            jabatan: "SEKRETARIS NAGARI",
+            nama: ["ADLIS, SE"],
+            icon: Icons.person,
+            utama: true,
+          ),
+        ),
+
+        const SizedBox(height: 45),
+
+        // ====================================================
+        // BARIS 4 BAGIAN
+        // ====================================================
+        Stack(
+          children: [
+            // ================================================
+            // GARIS HORIZONTAL
+            // ================================================
+            Positioned(
+              top: 0,
+              left: 150,
+              right: 150,
+              child: Container(height: 3, color: Colors.green.shade700),
+            ),
+
+            // ================================================
+            // EMPAT CABANG
+            // ================================================
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // =================================================
+                // KASI PEMERINTAHAN
+                // =================================================
+                Expanded(
+                  child: _BranchColumn(
+                    showTopLine: true,
+                    department: const _PersonCard(
+                      jabatan: "KASI PEMERINTAHAN",
+                      nama: ["ERIK COPRIMA, S.Kom"],
+                      icon: Icons.account_balance,
+                    ),
+                    child: const _PersonCard(
+                      jabatan: "STAF IT",
+                      nama: ["LIDRA"],
+                      icon: Icons.computer,
+                    ),
+                  ),
+                ),
+
+                const SizedBox(width: 20),
+
+                // =================================================
+                // KASI KESRA
+                // =================================================
+                Expanded(
+                  child: _BranchColumn(
+                    showTopLine: true,
+                    department: const _PersonCard(
+                      jabatan: "KASI KESRA & PELAYANAN",
+                      nama: ["ULFI KHAIRANI", "PITRINA"],
+                      icon: Icons.people,
+                    ),
+                    child: const _PersonCard(
+                      jabatan: "STAF KESRA & PELAYANAN",
+                      nama: ["AFNITIA FARISKI, SH"],
+                      icon: Icons.person,
+                    ),
+                  ),
+                ),
+
+                const SizedBox(width: 20),
+
+                // =================================================
+                // KAUR UMUM
+                // =================================================
+                Expanded(
+                  child: _BranchColumn(
+                    showTopLine: true,
+                    department: const _PersonCard(
+                      jabatan: "KAUR UMUM & PERENCANAAN",
+                      nama: ["SULASTRI, S.Pd"],
+                      icon: Icons.assignment,
+                    ),
+                    child: const _PersonCard(
+                      jabatan: "OPERATOR SIPADES",
+                      nama: [
+                        "WAHYU SAPUTERA, S.Sos.I",
+                        "SYFA ADILLAH",
+                        "NUR HIDAYAH",
+                      ],
+                      icon: Icons.computer,
+                    ),
+                  ),
+                ),
+
+                const SizedBox(width: 20),
+
+                // =================================================
+                // KAUR KEUANGAN
+                // =================================================
+                Expanded(
+                  child: _BranchColumn(
+                    showTopLine: true,
+                    department: const _PersonCard(
+                      jabatan: "KAUR KEUANGAN",
+                      nama: ["MARLINDA, S.Pd"],
+                      icon: Icons.account_balance_wallet,
+                    ),
+                    child: const _PersonCard(
+                      jabatan: "OPERATOR SIKUEDES",
+                      nama: ["NINA SAFITRI, S.Sos"],
+                      icon: Icons.computer,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+}
+
+// ============================================================
+// BRANCH COLUMN
+// ============================================================
+
+class _BranchColumn extends StatelessWidget {
+  final Widget department;
+  final Widget child;
+  final bool showTopLine;
+
+  const _BranchColumn({
+    required this.department,
+    required this.child,
+    this.showTopLine = false,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        // Garis turun dari garis horizontal
+        if (showTopLine) const _VerticalLine(height: 28),
+
+        department,
+
+        // Garis dari jabatan ke bawah
+        const _VerticalLine(height: 45),
+
+        child,
+      ],
+    );
+  }
+}
+
+// ============================================================
+// CARD
+// ============================================================
+
+class _PersonCard extends StatelessWidget {
   final String jabatan;
-  final String nama;
+  final List<String> nama;
+  final IconData icon;
   final bool utama;
 
-  const _JabatanCard({
-    required this.icon,
+  const _PersonCard({
     required this.jabatan,
     required this.nama,
+    required this.icon,
     this.utama = false,
   });
 
@@ -333,55 +316,74 @@ class _JabatanCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: const EdgeInsets.all(18),
+
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 18),
+
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(14),
-        border: Border.all(color: Colors.green.shade200, width: 1.5),
+        borderRadius: BorderRadius.circular(18),
+        border: Border.all(color: Colors.green.shade300, width: 2),
         boxShadow: const [
-          BoxShadow(color: Colors.black12, blurRadius: 5, offset: Offset(0, 3)),
+          BoxShadow(color: Colors.black12, blurRadius: 7, offset: Offset(0, 4)),
         ],
       ),
+
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          // ========================================
+          // ==================================================
           // ICON
-          // ========================================
+          // ==================================================
           Container(
-            width: utama ? 55 : 45,
-            height: utama ? 55 : 45,
+            width: utama ? 70 : 62,
+            height: utama ? 70 : 62,
             decoration: BoxDecoration(
               color: Colors.green.shade50,
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(15),
             ),
-            child: Icon(icon, color: Colors.green, size: utama ? 30 : 25),
+            child: Icon(
+              icon,
+              size: utama ? 38 : 32,
+              color: Colors.green.shade600,
+            ),
           ),
 
-          const SizedBox(width: 15),
+          const SizedBox(width: 18),
 
-          // ========================================
-          // JABATAN & NAMA
-          // ========================================
+          // ==================================================
+          // TEXT
+          // ==================================================
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
                   jabatan,
+                  softWrap: true,
                   style: TextStyle(
-                    fontSize: utama ? 18 : 15,
+                    fontSize: utama ? 22 : 17,
                     fontWeight: FontWeight.bold,
                     color: Colors.green.shade800,
+                    height: 1.2,
                   ),
                 ),
 
-                const SizedBox(height: 5),
+                const SizedBox(height: 8),
 
-                Text(
-                  nama,
-                  style: TextStyle(
-                    fontSize: utama ? 17 : 14,
-                    fontWeight: FontWeight.w600,
+                ...nama.map(
+                  (item) => Padding(
+                    padding: const EdgeInsets.only(bottom: 3),
+                    child: Text(
+                      item,
+                      softWrap: true,
+                      style: TextStyle(
+                        fontSize: utama ? 18 : 15,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.black87,
+                        height: 1.25,
+                      ),
+                    ),
                   ),
                 ),
               ],
@@ -393,15 +395,139 @@ class _JabatanCard extends StatelessWidget {
   }
 }
 
-// ==================================================
+// ============================================================
 // GARIS VERTIKAL
-// ==================================================
+// ============================================================
 
-class _GarisVertikal extends StatelessWidget {
-  const _GarisVertikal();
+class _VerticalLine extends StatelessWidget {
+  final double height;
+
+  const _VerticalLine({required this.height});
 
   @override
   Widget build(BuildContext context) {
-    return Container(width: 2, height: 25, color: Colors.green.shade300);
+    return Container(width: 3, height: height, color: Colors.green.shade700);
+  }
+}
+
+// ============================================================
+// MOBILE
+// ============================================================
+
+class _MobileStructure extends StatelessWidget {
+  const _MobileStructure();
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        const _PersonCard(
+          jabatan: "PJ. WALI NAGARI",
+          nama: ["SAHRIMAR, S.E, M.H"],
+          icon: Icons.account_balance,
+          utama: true,
+        ),
+
+        const _VerticalLine(height: 35),
+
+        const _PersonCard(
+          jabatan: "SEKRETARIS NAGARI",
+          nama: ["ADLIS, SE"],
+          icon: Icons.person,
+          utama: true,
+        ),
+
+        const SizedBox(height: 35),
+
+        const _PersonCard(
+          jabatan: "KASI PEMERINTAHAN",
+          nama: ["ERIK COPRIMA, S.Kom"],
+          icon: Icons.account_balance,
+        ),
+
+        const _VerticalLine(height: 30),
+
+        const _PersonCard(
+          jabatan: "STAF IT",
+          nama: ["LIDRA"],
+          icon: Icons.computer,
+        ),
+
+        const SizedBox(height: 35),
+
+        const _PersonCard(
+          jabatan: "KASI KESRA & PELAYANAN",
+          nama: ["ULFI KHAIRANI", "PITRINA"],
+          icon: Icons.people,
+        ),
+
+        const _VerticalLine(height: 30),
+
+        const _PersonCard(
+          jabatan: "STAF KESRA & PELAYANAN",
+          nama: ["AFNITIA FARISKI, SH"],
+          icon: Icons.person,
+        ),
+
+        const SizedBox(height: 35),
+
+        const _PersonCard(
+          jabatan: "KAUR UMUM & PERENCANAAN",
+          nama: ["SULASTRI, S.Pd"],
+          icon: Icons.assignment,
+        ),
+
+        const _VerticalLine(height: 30),
+
+        const _PersonCard(
+          jabatan: "OPERATOR SIPADES",
+          nama: ["WAHYU SAPUTERA, S.Sos.I", "SYFA ADILLAH", "NUR HIDAYAH"],
+          icon: Icons.computer,
+        ),
+
+        const SizedBox(height: 35),
+
+        const _PersonCard(
+          jabatan: "KAUR KEUANGAN",
+          nama: ["MARLINDA, S.Pd"],
+          icon: Icons.account_balance_wallet,
+        ),
+
+        const _VerticalLine(height: 30),
+
+        const _PersonCard(
+          jabatan: "OPERATOR SIKUEDES",
+          nama: ["NINA SAFITRI, S.Sos"],
+          icon: Icons.computer,
+        ),
+
+        const SizedBox(height: 50),
+
+        const Text(
+          "Kepala Jorong",
+          style: TextStyle(
+            fontSize: 25,
+            fontWeight: FontWeight.bold,
+            color: Colors.green,
+          ),
+        ),
+
+        const SizedBox(height: 25),
+
+        const _PersonCard(
+          jabatan: "KEPALA JORONG AIR HAJI",
+          nama: ["SADRIMAN"],
+          icon: Icons.location_city,
+        ),
+
+        const SizedBox(height: 20),
+
+        const _PersonCard(
+          jabatan: "KEPALA JORONG AIR HAJI SELATAN",
+          nama: ["ASRIL JONI"],
+          icon: Icons.location_city,
+        ),
+      ],
+    );
   }
 }

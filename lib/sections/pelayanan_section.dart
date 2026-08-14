@@ -27,7 +27,7 @@ class PelayananSection extends StatelessWidget {
 
           const Text(
             "Informasi pelayanan administrasi "
-            "Nagari Sungai Aur Ranah Air Haji",
+            "Kecamatan Sungai Aur Nagari Ranah Air Haji",
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 17, color: Colors.black54),
           ),

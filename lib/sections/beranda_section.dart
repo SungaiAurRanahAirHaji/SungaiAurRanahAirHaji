@@ -43,7 +43,7 @@ class BerandaSection extends StatelessWidget {
           const SizedBox(height: 20),
 
           const Text(
-            "Website Resmi Nagari Sungai Aur Ranah Air Haji",
+            "Website Resmi Kecamatan Sungai Aur Nagari Ranah Air Haji",
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 22,
@@ -60,10 +60,9 @@ class BerandaSection extends StatelessWidget {
           Container(
             constraints: const BoxConstraints(maxWidth: 900),
             child: const Text(
-              "Assalamu'alaikum Warahmatullahi Wabarakatuh.\n\n"
-              "Selamat datang di Website Profil Nagari Sungai Aur Ranah Air Haji. "
+              "Selamat datang di Website Profil Kecamatan Sungai Aur Nagari Ranah Air Haji. "
               "Website ini dibuat sebagai media informasi resmi yang menyajikan "
-              "profil nagari, pemerintahan, pelayanan administrasi, serta informasi "
+              "Profil Nagari, Pemerintahan, Pelayanan administrasi, serta Informasi "
               "lain yang dapat diakses oleh masyarakat dengan mudah.\n\n"
               "Kami berharap website ini dapat menjadi sarana komunikasi yang baik "
               "antara pemerintah nagari dan masyarakat serta memberikan manfaat bagi "

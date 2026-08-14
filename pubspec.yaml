@@ -52,14 +52,28 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
-
-  # The following line ensures that the Material Icons font is
-  # included with your application, so that you can use the icons in
-  # the material Icons class.
   uses-material-design: true
 
   assets:
-    - assets/images/
+    - assets/images/kantor.jpeg
+
+    - assets/images/dokumentasi/Kegiatan_1/
+    - assets/images/dokumentasi/Kegiatan_2/
+    - assets/images/dokumentasi/Kegiatan_3/
+    - assets/images/dokumentasi/Kegiatan_4/
+    - assets/images/dokumentasi/Kegiatan_5/
+    - assets/images/dokumentasi/Kegiatan_6/
+    - assets/images/dokumentasi/Kegiatan_7/
+    - assets/images/dokumentasi/Kegiatan_8/
+    - assets/images/dokumentasi/Kegiatan_9/
+    - assets/images/dokumentasi/Kegiatan_10/
+    - assets/images/dokumentasi/Kegiatan_11/
+    - assets/images/dokumentasi/Kegiatan_12/
+    - assets/images/dokumentasi/Kegiatan_13/
+    - assets/images/dokumentasi/Kegiatan_14/
+    - assets/images/dokumentasi/Kegiatan_15/
+    - assets/images/dokumentasi/Kegiatan_16/
+
 
   # To add assets to your application, add an assets section, like this:
   # assets:
