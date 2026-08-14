@@ -26,7 +26,7 @@ jobs:
           channel: stable
 
       - name: Build Flutter Web
-        run: flutter build web --release --base-href "/ProfilSungaiAurRanahAirHaji/"
+        run: flutter build web --release --base-href "/SungaiAurRanahAirHaji/"
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
